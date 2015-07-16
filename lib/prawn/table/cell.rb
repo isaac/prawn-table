@@ -165,7 +165,9 @@ module Prawn
           content.kind_of?(Date)
 
         if content.is_a?(Hash)
-          if content[:image]
+          if content[:caption]
+            return Cell::ImageWithCaption.new(pdf, at, content)
+          elsif content[:image]
             return Cell::Image.new(pdf, at, content)
           end
           options.update(content)

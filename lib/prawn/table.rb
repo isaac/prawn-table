@@ -16,6 +16,7 @@ require_relative 'table/cell/text'
 require_relative 'table/cell/subtable'
 require_relative 'table/cell/image'
 require_relative 'table/cell/span_dummy'
+require_relative 'table/cell/image_with_caption'
 
 module Prawn
   module Errors
