@@ -26,6 +26,7 @@ module Prawn
             end
             @pdf.fill_color = @caption_options[:color]
             @pdf.text_box @caption, @caption_options.merge(:width => natural_content_width)
+            @pdf.fill_color = "000000"
           end
         end
 
