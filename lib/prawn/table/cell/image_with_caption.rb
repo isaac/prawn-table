@@ -26,7 +26,9 @@ module Prawn
               @pdf.fill { @pdf.rectangle [ 0, caption_height], natural_content_width, caption_height }
             end
             @pdf.fill_color = @caption_options[:color]
-            @pdf.text_box @caption, @caption_options.merge(:width => natural_content_width)
+            @pdf.font @caption_options[:font] do
+              @pdf.text_box @caption, @caption_options.merge(:width => natural_content_width)
+            end
             @pdf.fill_color = "000000"
           end
         end
