@@ -21,8 +21,9 @@ module Prawn
         def draw_content
           super
           return unless @caption.present?
+          opacity = @caption_options[:opacity] || 0.5
           @pdf.bounding_box [ 0, caption_height + 1 ], :width => natural_content_width, :height => caption_height do
-            @pdf.transparent 0.5 do
+            @pdf.transparent opacity do
               @pdf.fill { @pdf.rectangle [ 0, caption_height], natural_content_width, caption_height }
             end
             @pdf.fill_color = @caption_options[:color]
