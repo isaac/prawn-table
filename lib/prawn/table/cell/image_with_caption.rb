@@ -26,7 +26,6 @@ module Prawn
             @pdf.transparent opacity do
               @pdf.fill { @pdf.rectangle [ 0, caption_height], natural_content_width, caption_height }
             end
-            @pdf.fill_color = @caption_options[:color]
             padding = @caption_options[:padding] || [ 0, 0, 0, 0 ]
             bounding_box_options = {
               :width => natural_content_width - padding.second - padding.fourth,
@@ -37,10 +36,8 @@ module Prawn
                 @pdf.text @caption, @caption_options
               end
             end
-            @pdf.fill_color = "000000"
           end
         end
-
       end
     end
   end
